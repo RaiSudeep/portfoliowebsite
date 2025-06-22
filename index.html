@@ -59,24 +59,52 @@
 			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
 			                    <i class="fa fa-bars"></i>
 			                </button>
-			                <a class="navbar-brand" href="index.html">Sudeep Rai</a>
+			                <a class="navbar-brand" href="https://raisudeep.github.io/portfoliowebsite/">Sudeep Rai</a>
 			            </div><!--/.navbar-header-->
 			            <!-- End Header Navigation -->
-					<label class="switch">
-						<input type="checkbox" id="mode-toggle">
-						<span class="slider round"></span>
-					</label>
+						
+					<!-- Dark/light mode -->
+					<div class="mode-switch-wrapper">
+						<span class="label light-label">Light</span>
+						<label class="switch">
+							<input type="checkbox" id="mode-toggle">
+							<span class="slider round"></span>
+						</label>
+						<span class="label dark-label">Dark</span>
+					</div>
 					<script>
 						const toggle = document.getElementById("mode-toggle");
+						const darkLabel = document.querySelector(".dark-label");
+						const lightLabel = document.querySelector(".light-label");
+						const hero = document.getElementById("hero-section");
+
+						function applyMode(isDark) {
+							document.body.classList.toggle("dark-mode", isDark);
+							if (hero) {
+							hero.setAttribute("data-bs-theme", isDark ? "dark" : "light");
+							}
+							darkLabel.classList.toggle("active", isDark);
+							lightLabel.classList.toggle("active", !isDark);
+						}
+
 						toggle.addEventListener("change", function () {
-							document.body.classList.toggle("dark-mode");
+							applyMode(toggle.checked);
+							// Optional: Save user preference
+							localStorage.setItem("darkMode", toggle.checked);
 						});
+
+						// Initialize state on page load
+						const savedMode = localStorage.getItem("darkMode") === "true";
+						toggle.checked = savedMode;
+						applyMode(savedMode);
 					</script>
+						<!-- End Dark/light mode -->
+
 			            <!-- Collect the nav links, forms, and other content for toggling -->
 			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 			                <li class=" smooth-menu active"></li>
-								<li class="smooth-menu"><a href="#about">about</a></li>
+								<li class="smooth-menu"><a href="#about">about me</a></li>
 			                    <li class="smooth-menu"><a href="#education">education</a></li>
 			                    <li class="smooth-menu"><a href="#experience">experience</a></li>
 			                    <li class="smooth-menu"><a href="#project">projects</a></li>
@@ -99,9 +127,9 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<div class="header-text">
-							<h2><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="60px"/>hi there<span>,</span> i am  Sudeep Rai<span>.</span>   </h2>
-							<p>A Data & BI Analyst turning raw data into real-world insights</p>
-							<a href="assets\download\Sudeep Rai - Resume.pdf" download>resume</a>
+							<h2><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="50px"/>hi there<span>,</span> i'm  Sudeep Rai   </h2>
+							<p class="tagline">No fluff. Just facts, forecasts, and fire dashboards</p>
+							<a href="assets\download\Sudeep Rai - Resume.pdf" download class="resume-button">📄 Download Resume</a>
 						</div><!--/.header-text-->
 					</div><!--/.col-->
 				</div><!-- /.row-->
@@ -121,7 +149,7 @@
 						<div class="col-sm-6">
 							<div class="single-about-txt">
 								<h3>
-									I’m a Data and BI Analyst who loves turning raw data into actionable insights that lead to smarter decisions. 
+									I’m a Data Analyst and Business Intelligence (BI) Developer who loves turning raw data into actionable insights that lead to smarter decisions. 
 									With a educational background in software engineering and a specialisation in artificial intelligence, 
 									I’m passionate about solving complex problems, embracing new challenges, and creating strategies that make a measurable impact. </h3>
 								
@@ -512,7 +540,7 @@
 								<div class="contact-adress">
 									<div class="contact-add-head">
 										<h3>Sudeep Rai</h3>
-										<p>Data/BI Analyst</p>
+										<p>Data Analyst | Business Intelligence (BI) Developer</p>
 									</div>
 									<div class="contact-add-info">
 										<div class="single-contact-add-info">
