@@ -53,8 +53,8 @@ body.dark-mode {
 /* Toggle Switch */
 .switch {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 32px;
+  right: 100px;
   display: inline-block;
   width: 50px;
   height: 24px;
@@ -93,6 +93,50 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(26px);
 }
+
+.mode-switch-wrapper {
+  position: fixed;
+  top: 33px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font-family: sans-serif;
+  font-size: 22px;
+  z-index: 999;
+}
+
+.mode-switch-wrapper .label {
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .mode-switch-wrapper .label {
+  color: #ccc;
+}
+
+.label {
+  color: #999;
+  font-weight: 400;
+  transition: color 0.3s, font-weight 0.3s;
+}
+
+.mode-switch-wrapper .active {
+  color: #2196F3;
+  font-weight: 600;
+}
+
+/* Optional dark-mode label colors */
+body.dark-mode .mode-switch-wrapper .label {
+  color: #aaa;
+}
+
+body.dark-mode .mode-switch-wrapper .active {
+  color: #66ccff;
+}
+
+
+
 
 
 a,a:hover,a:active,a:focus {
@@ -146,6 +190,7 @@ html,body{
 
 .fix{position: relative;clear: both;}
 /*=============Style css=========*/
+
 
 /*-------------------------------------
         2. Header
