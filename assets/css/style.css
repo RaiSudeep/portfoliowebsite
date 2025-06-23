@@ -372,7 +372,13 @@ body.dark-mode .header-text a:hover {
 /*-------------------------------------
         4.  About
 --------------------------------------*/
-.about {padding: 50px 0 100px;}
+.about {
+ padding: 50px 0 100px;
+  border-top: 1px solid #e5ebf2;
+  border-bottom: 1px solid #e5ebf2;
+  border-left: none;
+  border-right: none;
+}
 .about-content {padding-top: 100px;}
 /*.single-about-txt*/
 .single-about-txt h3 {
@@ -667,8 +673,11 @@ body.dark-mode span.single-timeline-horizontal {
         8. Projects
 --------------------------------------*/
 .project {
-    padding:  60px 0 100px;
-    border:  1px solid #e5ebf2;
+     padding: 50px 0 100px;
+  border-top: 1px solid #e5ebf2;
+  border-bottom: 1px solid #e5ebf2;
+  border-left: none;
+  border-right: none;
 }
 
 .project-content {padding-top: 100px;}
